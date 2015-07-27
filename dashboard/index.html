@@ -9,9 +9,10 @@
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <link href="dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
-
+    <script src="dist/angular/angular.min.js"></script>
+    <script src="dist/angular/MainController.js"></script>
 </head>
-    <body class="skin-blue sidebar-mini">
+    <body class="skin-blue sidebar-mini" ng-app="angularApp">
         <div class="wrapper">
             <aside class="main-sidebar">
                 <section class="sidebar">
@@ -24,14 +25,11 @@
 
             <div class="content-wrapper">
                 <section class="content-header">
-                    <h1>
-                        Page Header
-                        <small>Optional description</small>
-                    </h1>
+                    <h1>Home</h1>
                 </section>
 
-            <section class="content">
-
+            <section class="content" ng-controller="MainController">
+                {{ firstName }}
             </section>
         </div>
 
