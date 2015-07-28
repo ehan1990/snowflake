@@ -13,7 +13,7 @@
     <script src="dist/angular/MainController.js"></script>
 </head>
     <body class="skin-blue sidebar-mini" ng-app="angularApp">
-        <div class="wrapper">
+        <div class="wrapper" ng-controller="IndexController">
             <aside class="main-sidebar">
                 <section class="sidebar">
                     <ul class="sidebar-menu">
@@ -22,15 +22,7 @@
                     </ul>
                 </section>
             </aside>
-
-            <div class="content-wrapper">
-                <section class="content-header">
-                    <h1>Home</h1>
-                </section>
-
-            <section class="content" ng-controller="MainController">
-                {{ firstName }}
-            </section>
+            <div ng-include="'templates/match.html'"></div>
         </div>
 
         <footer class="main-footer">
