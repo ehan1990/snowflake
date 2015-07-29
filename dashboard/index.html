@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>AdminLTE 2 | Dashboard</title>
@@ -12,25 +13,20 @@
     <script src="dist/angular/angular.min.js"></script>
     <script src="dist/angular/MainController.js"></script>
 </head>
-    <body class="skin-blue sidebar-mini" ng-app="angularApp">
-        <div class="wrapper" ng-controller="IndexController">
-            <aside class="main-sidebar">
-                <section class="sidebar">
-                    <ul class="sidebar-menu">
-                        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                        <li><a><i class="fa fa-trophy"></i> <span>Matches</span></a></li>
-                    </ul>
-                </section>
-            </aside>
-            <div ng-include="'templates/match.html'"></div>
-        </div>
 
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2015 <a href="#">Jocelyn</a>.</strong> All rights reserved.
-        </footer>
+  <body class="skin-blue sidebar-mini" ng-app="angularApp" ng-controller="IndexController">
+    <div class="wrapper">
+      <div ng-include="'templates/sidebar.html'"></div>
 
-        <script src="plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="dist/js/app.min.js" type="text/javascript"></script>
-    </body>   
+      <div class="content-wrapper">
+        <div ng-include="'templates/home.html'"></div>
+      </div>
+        
+      <div ng-include="'templates/footer.html'"></div>
+    </div>
+    
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="dist/js/app.min.js" type="text/javascript"></script>
+  </body>
 </html>
