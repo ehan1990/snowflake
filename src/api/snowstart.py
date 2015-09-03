@@ -9,6 +9,11 @@ app = Flask(__name__, static_url_path='')
 
 cors = CORS(app)
 
+@app.route(ROOT_API + "/aafar", methods=['POST'])
+def aafar():
+    req = request.get_json(force=True)
+    return response_builder.build_data_response(data=req)
+
 @app.route(ROOT_API + "/foobar", methods=['GET'])
 def foobar():
     m = {
