@@ -1,0 +1,99 @@
+<section class="content-header">
+	<h1>
+        Zookeeper Reader
+        <small>Reads zookeeper nodes on any machine!</small>
+    </h1>
+</section>
+
+<section class="content">
+	<div class="col-xs-5">
+		<div class="box box-success">
+			<div class="box-body">
+				<form ng-submit="setMwIp(selectedIp, selectedHostname)">
+					<div class="col-xs-4">
+						<label>Enter IP</label>
+						<!--<input type="text" class="form-control" ng-model="selectedIp"/>-->
+						<autocomplete ng-model="selectedIp" data="ipList"></autocomplete>
+		            </div>
+		            <div class="col-xs-4">
+						<label>Select Hostname</label>
+						<select class="form-control" ng-model="selectedHostname" ng-options="hostname for hostname in hostnames"></select>
+		            </div>
+		            <div class="col-xs-3">
+						<input type="submit" value="Set" style="margin-top:25px" class="btn btn-block btn-success">
+					</div>
+					<div class="form-group col-xs-12">
+					<br>
+	                  	<textarea class="form-control" ng-model="setMwIpRes" rows="10" placeholder="Response from server" disabled></textarea>
+	                </div>
+                </form>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-5">
+			<div class="box box-success">
+				<div class="box-header">
+					<h3 class="box-title">MW Box List</h3>
+				</div>
+				
+				<div class="box-body table-responsive no-padding">
+					<table class="table table-hover">
+						<tbody>
+							<tr>
+								<th>IP</th>
+								<th>Hostname</th>
+								<th>Status</th>
+							</tr>
+							<tr ng-repeat="h in hosts">
+								<td>{{h.ip}}</td>
+								<td>{{h.hostname}}</td>
+								<td><span class="label label-success">Online</span></td>
+							</tr>						
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-10">
+			<div class="box box-success">
+				<div class="box-header">
+					<h3 class="box-title">Box Info</h3>
+				</div>
+				<br>
+				<div class="box-body table-responsive no-padding">
+					<table class="table table-hover">
+						<tbody>
+							<tr>
+								<th>Node</th>
+								<th>Box ID</th>
+								<th>Mgmt IP</th>
+								<th>Heartbeat</th>
+								<th>Version</th>
+								<th>Model</th>
+								<th>Ports</th>
+							</tr>
+							<tr ng-repeat="b in boxes">
+								<td>{{b.node_name}}</td>
+								<td>{{b.box_id}}</td>
+								<td>{{b.mgmt_ip}}</td>
+								<td>
+									<span ng-if="b.heart_beat == true" class="label label-success">Online</span>
+									<span ng-if="b.heart_beat == false" class="label label-danger">Offline</span>
+								</td>
+								<td>{{b.dpi_version}}</td>
+								<td>{{b.model}}</td>
+								<td>{{b.num_ports}}</td>
+							</tr>						
+						</tbody>
+					</table>
+				</div>	
+				
+			</div>
+		</div>
+	</div>
+          
+</section>

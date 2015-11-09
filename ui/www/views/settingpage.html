@@ -1,0 +1,43 @@
+<section class="content-header">
+	<h1>Home - Commit History</h1><br>
+</section>
+
+<section class="content">
+
+	<div class="row">
+		<div class="col-md-8">
+			<ul class="timeline">
+
+			    <li>
+			        <i class="fa fa-git bg-red"></i>
+			        <div class="timeline-item">
+			            <h3 class="timeline-header"><a href="#">General Info</a></h3>
+			            <div class="timeline-body">
+			              	<p>Version: {{revCount}}</p>
+							<p>branch: {{branch}}</p>
+			            </div>
+			        </div>
+			    </li>
+
+			    <li>				    
+			      	<li ng-class="{'time-label':c.type==objList[1]}" ng-repeat="c in commitHistory">	
+			      		<span ng-if="c.type==objList[1]" class="bg-red">{{c.datetime}}</span>
+
+			      		<i ng-if="c.type==objList[0]" class="fa fa-file-code-o bg-blue"></i>
+		        		<div ng-if="c.type==objList[0]" class="timeline-item">
+		          			<span class="time"><i class="fa fa-clock-o"></i> {{c.datetime}}</span>
+		          			<h3 class="timeline-header">Author: <a href="#">{{c.name}}</a></h3>
+
+	          				<div class="timeline-body">
+	       						{{c.message}}			       		
+	          				</div>
+		        		</div>
+	        		</li>
+		      	</li>	            		        
+		        
+		    </ul>
+	  	</div>
+	</div>
+
+          
+</section>
