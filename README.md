@@ -1,3 +1,3 @@
 # snowflake
-more cool stuff
-the coolest stuff u can ever find on github
+mw dependencies:
+- python 2.7.6
