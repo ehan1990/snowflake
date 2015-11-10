@@ -3,7 +3,7 @@ __author__ = 'Edward'
 import jsonpickle
 from flask import Response
 
-def build_data_response(data=None, status_code=200):
+def build_raw_response(data=None, status_code=200):
     if data is None:
         res = Response(response=None, status=400, mimetype="application/json")
         return res
