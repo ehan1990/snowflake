@@ -28,7 +28,7 @@ def api_discovery():
         i += 1
     return response_builder.build_raw_response(data=api_list)
 
-@app.route(ROOT_API + "/keepalive", methods=['POST'])
+@app.route(ROOT_API + "/keepalive", methods=['GET'])
 def api_keepalive():
     return response_builder.build_success_response()
 
