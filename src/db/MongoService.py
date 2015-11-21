@@ -21,21 +21,13 @@ class MongoService():
     def create_collection(self, name):
         self.db = self.db[name]
 
-
+    def get_all(self, name):
+        res = self.db[name].find()
+        return res
 
 def main():
     mongo_service = MongoService()
-    mongo_service.delete_db(DB_NAME)
     mongo_service.set_db(DB_NAME)
-    mongo_service.create_collection("devices")
-    m = {
-        "data": "foobar"
-    }
-    result = mongo_service.db.devices.insert(m)
-    q = mongo_service.db.devices.find()
-    for a in q:
-        print a
-
 
 if __name__ == "__main__":
     main()
