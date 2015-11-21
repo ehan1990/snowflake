@@ -7,24 +7,26 @@ from common.constants import *
 
 class MongoService():
 
-    def __init__(self, name):
+    def __init__(self):
         self.client = MongoClient('192.168.0.79', 27017)
 
-    def create_db(self, name):
+    def set_db(self, name):
         connection = Connection()
         self.db = connection[name]
-
-    def create_collection(self, name):
-        self.db = self.db[name]
 
     def delete_db(self, name):
         connection = Connection()
         connection.drop_database(name)
 
+    def create_collection(self, name):
+        self.db = self.db[name]
+
+
+
 def main():
-    mongo_service = MongoService(DB_NAME)
+    mongo_service = MongoService()
     mongo_service.delete_db(DB_NAME)
-    mongo_service.create_db(DB_NAME)
+    mongo_service.set_db(DB_NAME)
     mongo_service.create_collection("devices")
     m = {
         "data": "foobar"
