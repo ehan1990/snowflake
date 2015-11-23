@@ -30,10 +30,3 @@ def call_delete_api(ip, api_url, data):
     response = requests.delete(url, data=jsonpickle.encode(data))
     SimpleLogger.get_logger().info("status code: %s", response.status_code)
     return response
-
-if __name__ == "__main__":
-    SimpleLogger.setup()
-    s = call_get_api("192.168.0.79", "/api/v1/login")
-    print s.status_code
-    print s.reason
-    print s.content
