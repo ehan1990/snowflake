@@ -14,6 +14,7 @@ class TestServiceRequest(unittest.TestCase):
     def test_get(self):
         s = service_request.call_api("192.168.0.79", "/api/v1/login", protocol=GET)
         print s.content
+        print s.status_code
 
     def test_post(self):
         data = {

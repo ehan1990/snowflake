@@ -11,7 +11,7 @@ HTTP = "http://"
 HTTPS = "https://"
 
 # http protocol
-GET = "get"
-PUT = "put"
-POST = "post"
-DELETE = "delete"
+GET = "GET"
+PUT = "PUT"
+POST = "POST"
+DELETE = "DELETE"
