@@ -1,5 +1,5 @@
 
-var app = angular.module('CoolStuff', ['ui.router', 'autocomplete']);	
+var app = angular.module('CoolStuff', ['ui.router']);	
 // app.controller('ContentController', function($scope, $http) {
 
 // 	$scope.page = 'views/zoosimulatorpage.html';
