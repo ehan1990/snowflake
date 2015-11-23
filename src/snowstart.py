@@ -2,12 +2,16 @@ __author__ = 'Edward'
 
 from flask import Flask
 from flask_cors import CORS
+from api.service_api import service_api
 from common.constants import *
 from common import response_builder
+from common.simple_logger import SimpleLogger
 from model.api_model import ApiModel
 
 app = Flask(__name__, static_url_path='')
 cors = CORS(app)
+
+app.register_blueprint(service_api)
 
 @app.route(ROOT_API, methods=['GET'])
 def api_discovery():
@@ -29,5 +33,6 @@ def api_discovery():
     return response_builder.build_raw_response(data=api_list)
 
 if __name__ == "__main__":
+    SimpleLogger.setup(file_path="/preserve/logs/snowflake.log", process_name="SNOWFLAKE")
     app.config["SECRET_KEY"] = "ITSASECRET"
     app.run(debug=False, host='0.0.0.0', port=4000, threaded=True)
