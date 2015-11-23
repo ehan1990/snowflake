@@ -8,7 +8,7 @@ from common.simple_logger import SimpleLogger
 service_api = Blueprint('service_api', __name__)
 
 @service_api.route(ROOT_API + "/post", methods=["POST"])
-def get_box_list():
+def api_call_service():
     if request.method == "POST":
         SimpleLogger.get_logger().info("called post api")
         return response_builder.build_success_response()
