@@ -2,6 +2,7 @@ __author__ = 'ehan'
 
 import unittest
 from common.simple_logger import SimpleLogger
+from common.constants import *
 import service_request
 
 class TestServiceRequest(unittest.TestCase):
@@ -11,7 +12,7 @@ class TestServiceRequest(unittest.TestCase):
         SimpleLogger.setup()
 
     def test_get(self):
-        s = service_request.call_get_api("192.168.0.79", "/api/v1/login")
+        s = service_request.call_api("192.168.0.79", "/api/v1/login", protocol=GET)
         print s.content
 
     def test_post(self):
@@ -19,7 +20,7 @@ class TestServiceRequest(unittest.TestCase):
             "username": "ehan",
             "password": "admin@123"
         }
-        s = service_request.call_post_api("192.168.0.79", "/api/v1/login", data)
+        s = service_request.call_api("192.168.0.79", "/api/v1/login", data=data, protocol=POST)
         print s.content
 
 
