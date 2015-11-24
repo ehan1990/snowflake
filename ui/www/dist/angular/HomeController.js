@@ -1,4 +1,4 @@
-app.controller('SettingController', function($scope, $http) {    
+app.controller('HomeController', function($scope, $http) {    
 
 	$scope.commitObj = "commit_obj";
 	$scope.dateObj = "date_obj";
