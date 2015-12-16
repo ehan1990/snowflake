@@ -14,7 +14,7 @@ def api_call_service():
         SimpleLogger.get_logger().info("---------- called callapi ----------")
         req = request.get_json(force=True)
         header = req.get("header")
-        ip = req.get("ip")
+        ip = str(req.get("ip"))
         api_url = req.get("api_url")
         data = req.get("data")
 
