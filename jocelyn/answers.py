@@ -1,5 +1,12 @@
 __author__ = 'ehan'
 
+def question_five(name):
+    employee_list = ["edward", "jocelyn", "charlie", "james", "yizhou"]
+    for employee in employee_list:
+        if name == employee:
+            return True
+    return False
+
 def question_four(val):
     for i in range(1, 10):
         print val * i
@@ -39,6 +46,10 @@ def main():
 
     print "----- q4 -----"
     question_four(3)
+
+    print "----- q5 -----"
+    answer5 = question_five("edward")
+    print answer5
 
 if __name__ == "__main__":
     main()
