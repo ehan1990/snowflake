@@ -1,0 +1,11 @@
+1. write a function that takes in variable 'x', and returns variable 'y', where y = x^2 + 1
+
+2. write a function that takes in variable 'temperature', and returns the following:
+if it's below 0 degrees, return "please wear winter jacket!"
+if it's between 0 and 15 degrees, return "please wear a jacket"
+if it's above 15 degrees, return "you should be ok without a jacket"
+if input is not an integer, return "invalid input. please input an integer"
+
+3. write a function that takes in an integer, and print the integers from 1 to that integer you inputted
+
+4. write a function that takes in an integer, and print its multiplication table from 1 to 9. e.g., if input is 5, print 5x1, 5x2, 5x3...5x9
