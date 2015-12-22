@@ -13,22 +13,16 @@ def api_call_service():
     if request.method == "POST":
         SimpleLogger.get_logger().info("---------- called callapi ----------")
         req = request.get_json(force=True)
-        header = req.get("header")
+        protocol = str(req.get("protocol"))
         ip = str(req.get("ip"))
-        api_url = req.get("api_url")
-        data = req.get("data")
+        api_url = str(req.get("api_url"))
+        data = str(req.get("data"))
+        method = str(req.get("method"))
 
         if data is None:
             data = {}
 
-        protocol = req.get("protocol")
-        SimpleLogger.get_logger().info("header: %s", header)
-        SimpleLogger.get_logger().info("ip: %s", ip)
-        SimpleLogger.get_logger().info("api_url: %s", api_url)
-        SimpleLogger.get_logger().info("data: %s", jsonpickle.encode(data))
-        SimpleLogger.get_logger().info("protocol: %s", protocol)
-
-        res = service_request.call_api(ip, api_url, data=data, header=header, protocol=protocol)
+        res = service_request.call_api(protocol, ip, api_url, method, data=data)
         res_data = {
             "data": jsonpickle.decode(res.content),
             "status_code": res.status_code

@@ -12,4 +12,24 @@ app.controller('ApiController', function($scope, $http) {
 		$scope.methods = response;
 		$scope.selected_method = $scope.methods[0];
 	});
+
+	$scope.send_api_req = function(protocol, ip, api_rul, method) {
+		var req = {
+			method: 'POST',
+			url: '/api/v1/simo/scaleup/startdpis',
+			data: { 
+				protocol: protocol,
+				ip: ip,
+				api_url: api_rul,
+				method: method
+			}
+		};
+
+		$http(req).success(function(response) {
+			$scope.serverResponse = response.msg;
+			$http.get("/api/v1/callapi").success(function (response) {
+				$scope.data = response;
+ 	 	 	});
+		});
+	}
 });

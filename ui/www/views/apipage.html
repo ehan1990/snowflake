@@ -18,21 +18,27 @@
 					        </select>
 			            </div>
 
+			            <div class="col-xs-2">
+							<label>IP/Domain Name</label>
+							<input type="text" ng-model="ip" class="form-control"/>
+			            </div>
+
+			            <div class="col-xs-7">
+							<label>API URL</label>
+							<input type="text" ng-model="api_url" class="form-control"/>
+			            </div>
+
 			            <div class="col-xs-1">
 							<label>Method</label>
 							<select class="form-control" ng-model="selected_method" ng-options="m for m in methods"></select>
 			            </div>
 
-			            <div class="col-xs-9">
-							<label>API URL</label>
-							<input type="text" name="q" class="form-control"/>
-			            </div>
 			            <div class="col-xs-1">
 							<input type="submit" value="Send" style="margin-top:25px" class="btn btn-block btn-success">
 						</div>
 						<div class="form-group col-xs-12">
 						<br>
-		                  	<textarea class="form-control" ng-model="setMwIpRes" rows="30" placeholder="Response from server"></textarea>
+		                  	<textarea class="form-control" ng-model="data" rows="30" placeholder="Response from server"></textarea>
 		                </div>
 	                </form>
 				</div>

@@ -12,7 +12,7 @@ class TestServiceRequest(unittest.TestCase):
         SimpleLogger.setup()
 
     def test_get(self):
-        s = service_request.call_api("192.168.0.79", "/api/v1/login", protocol=GET)
+        s = service_request.call_api("http://", "127.0.0.1", "/api/v1", GET)
         print s.content
         print s.status_code
 
@@ -21,7 +21,7 @@ class TestServiceRequest(unittest.TestCase):
             "username": "ehan",
             "password": "admin@123"
         }
-        s = service_request.call_api("192.168.0.79", "/api/v1/login", data=data, protocol=POST)
+        s = service_request.call_api("http://", "192.168.0.79", + "/api", POST, data=data)
         print s.content
 
 
