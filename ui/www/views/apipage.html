@@ -11,7 +11,7 @@
 		<div class="col-xs-11">
 			<div class="box box-success">
 				<div class="box-body">
-					<form ng-submit="setMwIp(selectedIp, selectedHostname)">
+					<form ng-submit="send_api_req(selected_protocol, ip, api_url, selected_method)">
 						<div class="col-xs-1">
 							<label>Protocol</label>
 							<select class="form-control" ng-model="selected_protocol" ng-options="p for p in protocols">                

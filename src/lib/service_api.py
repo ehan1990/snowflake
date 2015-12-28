@@ -19,7 +19,7 @@ def api_call_service():
         data = str(req.get("data"))
         method = str(req.get("method"))
 
-        if data is None:
+        if data is None or data == 'None':
             data = {}
 
         res = service_request.call_api(protocol, ip, api_url, method, data=data)

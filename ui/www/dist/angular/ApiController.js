@@ -16,7 +16,7 @@ app.controller('ApiController', function($scope, $http) {
 	$scope.send_api_req = function(protocol, ip, api_rul, method) {
 		var req = {
 			method: 'POST',
-			url: '/api/v1/simo/scaleup/startdpis',
+			url: '/api/v1/callapi',
 			data: { 
 				protocol: protocol,
 				ip: ip,
@@ -24,12 +24,12 @@ app.controller('ApiController', function($scope, $http) {
 				method: method
 			}
 		};
+		console.log("sending api request");
 
 		$http(req).success(function(response) {
-			$scope.serverResponse = response.msg;
-			$http.get("/api/v1/callapi").success(function (response) {
-				$scope.data = response;
- 	 	 	});
+			$scope.data = JSON.stringify(response.data, null, 8);
+			console.log("result: ");
+			console.log($scope.data);
 		});
 	}
 });
