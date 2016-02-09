@@ -32,28 +32,15 @@
     <div class="wrapper">
 
         <div>
-            <aside class="main-sidebar">
-                <section class="sidebar">
-                    <ul class="sidebar-menu">
-                        <li><a ui-sref="home"><i class='fa fa-gear'></i> <span>Home</span></a></li>
-                        <li><a ui-sref="zoo"><i class='fa fa-paw'></i> <span>Zookeeper Reader</span></a></li>
-                        <li><a ui-sref="kafka_sender"><i class='fa fa-rocket'></i> <span>Kafka Sender</span></a></li>
-                        <!--<li><a ui-sref="kafka_reader"><i class='fa fa-envelope'></i> <span>Kafka Reader</span></a></li>-->
-                        <li><a ui-sref="dpi"><i class='fa fa-fire'></i> <span>Dpi Simulator</span></a></li>
-                        <li><a ui-sref="scale_up"><i class='fa fa-line-chart'></i> <span>Scale Up</span></a></li>
-                    </ul>
-                </section>
-            </aside>
-
+            <div ng-include="'dist/asset/view/sidebar.html'"></div>
             <div class="content-wrapper">
                 <div ui-view></div>                               
             </div>
         </div>  
 
-      <footer class="main-footer">
-        <strong>Copyright &copy; 2015 <a href="#">Edward Han</a>.</strong> All rights reserved.
-      </footer>
-      
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2015 <a href="#">Edward Han</a>.</strong> All rights reserved.
+        </footer>
     </div>
 </body>
 </html>
