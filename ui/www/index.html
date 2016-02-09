@@ -32,14 +32,13 @@
 
 <body class="skin-blue sidebar-mini" ng-app="CoolStuff">
     <div class="wrapper">
-
-        <div>
-            <div ng-include="'dist/asset/view/sidebar.html'"></div>
-            <div class="content-wrapper">
-                <div ui-view></div>                               
-            </div>
+        <div ng-include="'dist/asset/view/header.html'"></div>
+        <div ng-include="'dist/asset/view/sidebar.html'"></div>
+        <div class="content-wrapper">
+            <div ui-view></div> 
         </div>
-        <footer class="main-footer">
+        
+         <footer class="main-footer">
             <strong>Copyright &copy; 2015 <a href="#">Edward Han</a>.</strong> All rights reserved.
         </footer>
     </div>
