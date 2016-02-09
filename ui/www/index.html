@@ -17,14 +17,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="dist/autocomplete/autocomplete.js"></script>
-    <script src="dist/angular/app.js"></script>
-    <script src="dist/angular/ZooController.js"></script>
-    <script src="dist/angular/DpiController.js"></script>
-    <script src="dist/angular/FlowController.js"></script>
-    <script src="dist/angular/KafkaReaderController.js"></script>
-    <script src="dist/angular/SettingController.js"></script>
-    <script src="dist/angular/ScaleUpController.js"></script>
-    <script src="dist/angular/config.js"></script>
+    <script src="dist/asset/app.js"></script>
+    <script src="dist/asset/controller/ZooController.js"></script>
+    <script src="dist/asset/controller/DpiController.js"></script>
+    <script src="dist/asset/controller/FlowController.js"></script>
+    <script src="dist/asset/controller/KafkaReaderController.js"></script>
+    <script src="dist/asset/controller/HomeController.js"></script>
+    <script src="dist/asset/controller/ScaleUpController.js"></script>
+    <script src="dist/asset/config.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
             <aside class="main-sidebar">
                 <section class="sidebar">
                     <ul class="sidebar-menu">
-                        <li><a ui-sref="setting"><i class='fa fa-gear'></i> <span>Home</span></a></li>
+                        <li><a ui-sref="home"><i class='fa fa-gear'></i> <span>Home</span></a></li>
                         <li><a ui-sref="zoo"><i class='fa fa-paw'></i> <span>Zookeeper Reader</span></a></li>
                         <li><a ui-sref="kafka_sender"><i class='fa fa-rocket'></i> <span>Kafka Sender</span></a></li>
                         <!--<li><a ui-sref="kafka_reader"><i class='fa fa-envelope'></i> <span>Kafka Reader</span></a></li>-->
