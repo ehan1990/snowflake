@@ -1,0 +1,38 @@
+server {
+    server_name  localhost;
+
+    root   /home/ehan/git/snowflake/ui/www
+    index  index.html index.htm;
+    set    $api http://127.0.0.1:4000;
+
+    location / {
+        expires 1d;
+        add_header Pragma public;
+        add_header Cache-Control public;
+
+        try_files $uri /index.html;
+    }
+
+    location /static/ {
+        expires 1M;
+        add_header Pragma public;
+        add_header Cache-Control public;
+    }
+
+    location /api/ {
+        expires -1;
+        add_header Pragma no-cache;
+
+        proxy_pass $api;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /storage {
+          alias /storage;
+          autoindex on;
+    }
+
+}
+
