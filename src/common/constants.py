@@ -5,6 +5,7 @@ ROOT_API = "/api/v1"
 
 # db
 DB_NAME = "snowflake"
+DB_IP = "127.0.0.1"
 
 # protocol
 HTTP = "http://"
