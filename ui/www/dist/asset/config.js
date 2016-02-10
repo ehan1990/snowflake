@@ -11,10 +11,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'ZooController'
         })
 
-        .state('kafka_sender', {
-            url: '/kafka_sender',
-            templateUrl: 'dist/asset/view/flowsimulatorpage.html',
-            controller: 'FlowController'
+        .state('db', {
+            url: '/db',
+            templateUrl: 'dist/asset/view/db.html',
+            controller: 'DbController'
         })
 
         .state('kafka_reader', {
