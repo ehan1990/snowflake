@@ -7,8 +7,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // HOME STATES AND NESTED VIEWS ========================================
         .state('db', {
             url: '/db',
-            templateUrl: 'dist/asset/view/zoosimulatorpage.html',
-            controller: 'ZooController'
+            templateUrl: 'dist/asset/view/template.html',
+            controller: 'TemplateController'
         })
 
         .state('kafka_reader', {
@@ -33,5 +33,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/home',
             templateUrl: 'dist/asset/view/home.html',
             controller: 'HomeController'
-        });        
+        })
+
+        .state('temp', {
+            url: '/temp',
+            templateUrl: 'dist/asset/view/template.html',
+            controller: 'TemplateController'
+        });
 });
