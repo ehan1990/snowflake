@@ -1,6 +1,6 @@
-app.controller('HomeController', function($scope, $http) {    
+app.controller('HomeController', function($scope, $http, TemplateService) {    
 
-	$scope.version = 123;
+	$scope.version = TemplateService.version();
 	$scope.branch = "master";
 
 	$scope.foobarfunc = function() {
