@@ -11,28 +11,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'TemplateController'
         })
 
-        .state('kafka_reader', {
-            url: '/kafka_reader',
-            templateUrl: 'dist/asset/view/kafkareaderpage.html',
-            controller: 'KafkaReaderController'
-        })
-
-        .state('dpi', {
-            url: '/dpi',
-            templateUrl: 'dist/asset/view/dpisimulatorpage.html',
-            controller: 'DpiController'
-        })
-
-        .state('scale_up', {
-            url: '/scale',
-            templateUrl: 'dist/asset/view/scaleuppage.html',
-            controller: 'ScaleUpController'
-        })
-
         .state('home', {
             url: '/home',
             templateUrl: 'dist/asset/view/home.html',
             controller: 'HomeController'
+        })
+
+        .state('table', {
+            url: '/table',
+            templateUrl: 'dist/asset/view/mock/table.html',
+            controller: 'TableController'
         })
 
         .state('temp', {

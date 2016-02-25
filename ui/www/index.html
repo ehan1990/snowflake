@@ -7,7 +7,6 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!--<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />-->
     <link href="dist/css/AdminLTE.css" rel="stylesheet" type="text/css" />
     <link href="dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
 
@@ -23,22 +22,15 @@
     <script src="dist/asset/service/TemplateService.js"></script>    
 
     <script src="dist/asset/controller/TemplateController.js"></script>
-    <script src="dist/asset/controller/ZooController.js"></script>
-    <script src="dist/asset/controller/DpiController.js"></script>
-    <script src="dist/asset/controller/FlowController.js"></script>
-    <script src="dist/asset/controller/KafkaReaderController.js"></script>
-    <script src="dist/asset/controller/HomeController.js"></script>
-    <script src="dist/asset/controller/ScaleUpController.js"></script>
     <script src="dist/asset/config.js"></script>
 
 
 </head>
 
-<body class="skin-blue sidebar-mini" ng-app="CoolStuff">
+<body class="skin-blue sidebar-mini" ng-app="Snowflake">
     <div class="wrapper">
         <div ng-include="'dist/asset/view/header.html'"></div>
 
-        <!-- <div ng-include="'dist/asset/view/sidebar.html'"></div> -->
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
@@ -63,7 +55,7 @@
                     
                     <li><a ui-sref="users"><i class='fa fa-user'></i> <span>Users</span> <span class="label label-primary pull-right">6</span></a></li>
                     <li><a ui-sref="login"><i class='fa fa-sign-in'></i> <span>Log in</span></a></li>
-                    <li><a ui-sref="logout"><i class='fa fa-sign-out'></i> <span>Log out</span></a></li>
+                    <li><a ui-sref="table"><i class='fa fa-sign-in'></i> <span>Table</span></a></li>
                     <li><a ui-sref="temp"><i class='fa fa-file'></i> <span>Temp</span></a></li>
                 </ul>
             </section>
@@ -73,9 +65,7 @@
             <div ui-view></div> 
         </div>
         
-         <footer class="main-footer">
-            <strong>Copyright &copy; 2015 <a href="#">Edward Han</a>.</strong> All rights reserved.
-        </footer>
+        <div ng-include="'dist/asset/view/footer.html'"></div>
     </div>
 </body>
 </html>
