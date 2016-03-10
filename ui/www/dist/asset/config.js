@@ -17,6 +17,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'HomeController'
         })
 
+        .state('collection', {
+            url: '/collection',
+            templateUrl: 'dist/asset/view/collection.html',
+            controller: 'CollectionController'
+        })
+
         .state('table', {
             url: '/table',
             templateUrl: 'dist/asset/view/mock/table.html',
