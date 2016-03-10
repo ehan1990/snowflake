@@ -3,6 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 from lib.service_api import service_api
 from lib.misc_api import misc_api
+from lib.version_api import version_api
 from common.constants import *
 from common import response_builder
 from common.simple_logger import SimpleLogger
@@ -11,8 +12,9 @@ from model.api_model import ApiModel
 app = Flask(__name__, static_url_path='')
 cors = CORS(app)
 
-app.register_blueprint(service_api)
 app.register_blueprint(misc_api)
+app.register_blueprint(service_api)
+app.register_blueprint(version_api)
 
 @app.route(ROOT_API, methods=['GET'])
 def api_discovery():

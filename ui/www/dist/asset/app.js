@@ -1,6 +1,6 @@
 
-var app = angular.module('Snowflake', ['ui.router', 'autocomplete']);	
+var app = angular.module('Snowflake', ['ui.router']);	
 
 var constants = {
-	"rootApi": "api/v1"
+	"ROOTAPI": "api/v1"
 };
