@@ -1,0 +1,82 @@
+[
+    {
+        "name": "users",
+        "row": 15634
+    },
+    {
+        "name": "homes",
+        "row": 134
+    },
+    {
+        "name": "bedrooms",
+        "row": 1654
+    },
+    {
+        "name": "cities",
+        "row": 1456
+    },
+    {
+        "name": "provinces",
+        "row": 1576
+    },
+    {
+        "name": "prices",
+        "row": 1567
+    },
+    {
+        "name": "restaurants",
+        "row": 187
+    },
+    {
+        "name": "transits",
+        "row": 185
+    },
+    {
+        "name": "schools",
+        "row": 15678
+    },
+    {
+        "name": "grades",
+        "row": 1657
+    },
+    {
+        "name": "realtors",
+        "row": 1435
+    },
+    {
+        "name": "banks",
+        "row": 123
+    },
+    {
+        "name": "assets",
+        "row": 11343
+    },
+    {
+        "name": "clients",
+        "row": 1435
+    },
+    {
+        "name": "investors",
+        "row": 11
+    },
+    {
+        "name": "angels",
+        "row": 132
+    },
+    {
+        "name": "iphones",
+        "row": 1431
+    },
+    {
+        "name": "androids",
+        "row": 1231
+    },
+    {
+        "name": "apps",
+        "row": 1435
+    },
+    {
+        "name": "money",
+        "row": 132
+    }
+]

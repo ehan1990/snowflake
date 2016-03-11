@@ -1,10 +1,50 @@
 <section class="content-header">
 	<h1>
         Collection Page
-        <small>It's a template page!</small>
     </h1>
 </section>
 
-<section class="content" ng-controller="TemplateController">
-	{{section_title}}
+<section class="content">
+	<div class="row">
+		<!-- table -->
+		<div class="col-xs-8">
+			<div class="box box-primary">
+				<div class="box-body">
+					<div class="box-header">
+						<h3 class="box-title">Tables</h3>
+						<div class="box-tools">
+			            	<div class="input-group input-group-sm" style="width: 150px;">
+			                	<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+			                	<div class="input-group-btn">
+			                    	<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+			                	</div>
+			                </div>
+			            </div>
+					</div>
+					<table class="table table-striped">
+						<tr>
+							<th style="text-align: center">Name</th>
+							<th style="text-align: center" width="150px">Rows</th>
+							<th style="text-align: center" width="150px">Detail</th>
+						</tr>
+						<tr ng-repeat="d in collections">
+							<td style="text-align: center">{{d.name}}</td>
+							<td style="text-align: center">{{d.rows}}</td>
+							<td style="text-align: center"><a class="btn btn-primary btn-xs" ng-click="toDetail(d.serial)">detail page</a></td>
+						</tr>
+					</table>
+					<div class="box-footer clearfix">
+						<ul class="pagination pagination-sm no-margin pull-right">
+							<li><a href="#" ng-click=decSystemStatPage()>«</a></li>
+							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[0])>{{systemStatPages[0]}}</a></li>
+							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[1])>{{systemStatPages[1]}}</a></li>
+							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[2])>{{systemStatPages[2]}}</a></li>
+							<li><a href="#" ng-click=incSystemStatPage()>»</a></li>
+						</ul>
+            		</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </section>

@@ -1,7 +1,7 @@
 app.service('CollectionService', function($http){
 
-	this.getVersion = function() {
-		return $http.get(constants.ROOTAPI + "/version");
+	this.getCollections = function() {
+		return $http.get(constants.ROOTAPI + "/collections");
 	}
 
 
