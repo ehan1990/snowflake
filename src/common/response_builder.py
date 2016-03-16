@@ -12,6 +12,19 @@ def build_raw_response(data=None, status_code=200):
         res = Response(response=result, status=status_code, mimetype="application/json")
         return res
 
+def build_data_response(data=None, count=0, status_code=200):
+    if data is None:
+        res = Response(response=None, status=400, mimetype="application/json")
+        return res
+    else:
+        m = {
+            "content": data,
+            "count": count
+        }
+        result = jsonpickle.encode(m)
+        res = Response(response=result, status=status_code, mimetype="application/json")
+        return res
+
 def build_success_response(data=None, msg=None, status_code=200):
     m = {
         "msg": msg,

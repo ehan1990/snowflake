@@ -1,13 +1,14 @@
 __author__ = 'Edward'
 from flask import Flask
 from flask_cors import CORS
-from lib.colletion_api import collection_api
+from lib.collection_api import collection_api
 from lib.misc_api import misc_api
 from lib.service_api import service_api
 from lib.version_api import version_api
 from common.constants import *
 from common import response_builder
 from common.simple_logger import SimpleLogger
+from db.mongo_service import MongoService
 from model.api_model import ApiModel
 
 app = Flask(__name__, static_url_path='')
@@ -38,6 +39,7 @@ def api_discovery():
     return response_builder.build_raw_response(data=api_list)
 
 if __name__ == "__main__":
-    SimpleLogger.setup(file_path="/preserve/logs/snowflake.log", process_name="SNOWFLAKE")
+    logger = SimpleLogger.setup(file_path="/preserve/logs/snowflake/snowflake.log", process_name="SNOWFLAKE")
+    MongoService.init(logger)
     app.config["SECRET_KEY"] = "ITSASECRET"
     app.run(debug=False, host='0.0.0.0', port=4000, threaded=True)

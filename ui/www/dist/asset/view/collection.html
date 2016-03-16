@@ -14,7 +14,7 @@
 						<h3 class="box-title">Tables</h3>
 						<div class="box-tools">
 			            	<div class="input-group input-group-sm" style="width: 150px;">
-			                	<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+			                	<input type="text" ng-model="searchValue" ng-change="updateSearch(searchValue)" ng-model-options="{debounce:500}" class="form-control pull-right" placeholder="Search">
 			                	<div class="input-group-btn">
 			                    	<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 			                	</div>
@@ -34,12 +34,13 @@
 						</tr>
 					</table>
 					<div class="box-footer clearfix">
+						total: {{count}}
 						<ul class="pagination pagination-sm no-margin pull-right">
-							<li><a href="#" ng-click=decSystemStatPage()>«</a></li>
-							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[0])>{{systemStatPages[0]}}</a></li>
-							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[1])>{{systemStatPages[1]}}</a></li>
-							<li><a href="#" ng-click=changeSystemStatPage(systemStatPages[2])>{{systemStatPages[2]}}</a></li>
-							<li><a href="#" ng-click=incSystemStatPage()>»</a></li>
+							<li><a href="#/collection" ng-click=decCollectionPage()>«</a></li>
+							<li><a href="#/collection" ng-click=changeCollectionPage(collectionPages[0])>{{collectionPages[0]}}</a></li>
+							<li><a href="#/collection" ng-click=changeCollectionPage(collectionPages[1])>{{collectionPages[1]}}</a></li>
+							<li><a href="#/collection" ng-click=changeCollectionPage(collectionPages[2])>{{collectionPages[2]}}</a></li>
+							<li><a href="#/collection" ng-click=incCollectionPage()>»</a></li>
 						</ul>
             		</div>
 				</div>

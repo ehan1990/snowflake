@@ -50,9 +50,8 @@ class MongoService():
         res = cls.db[name].find()
         return res
 
-#
     @classmethod
-    def query(cls, name, limit=5, page=1, match={}, order=-1):
+    def query(cls, name, limit=DEFAULT_LIMIT, page=DEFAULT_PAGE, match={}, order=DEFAULT_ORDER):
         try:
             data = []
             res = cls.db[name].find(match, {"_id": 0}).sort([['_id', order]]).skip((page-1) * limit).limit(limit)
@@ -64,13 +63,11 @@ class MongoService():
             return None
 
     @classmethod
-    def get(cls, name, match={}):
+    def count(cls, name, match={}):
         try:
             data = []
-            res = cls.db[name].find(match)
-            for r in res:
-                data.append(r)
-            return data
+            res = cls.db[name].find(match, {"_id": 0}).count()
+            return res
         except:
             cls.logger.error(traceback.format_exc())
             return None
@@ -89,8 +86,7 @@ class MongoService():
 
 def import_data():
     # MongoService.import_from_json(RESOURCE + "/system_stats.json", DB_SYSTEM_STATS)
-    MongoService.import_from_json(RESOURCE + "/mysql_list.json", DB_TEST)
-    MongoService.import_from_json(RESOURCE + "/mgmt_console_list.json", DB_MGMT_CONSOLES)
+    MongoService.import_from_json(RESOURCE + "/mock_collections.json", DB_COLLECTIONS)
 
 def reset():
     MongoService.delete_all_collections()
@@ -101,5 +97,5 @@ def main(logger):
     import_data()
 
 if __name__ == "__main__":
-    logger = SimpleLogger.setup(file_path="/home/ehan/logs/mongo_service.log", process_name="DB_INIT")
+    logger = SimpleLogger.setup(file_path="/preserve/logs/snowflake/mongo_service.log", process_name="DB_INIT")
     main(logger)
