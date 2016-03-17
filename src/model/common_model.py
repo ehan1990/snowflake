@@ -7,6 +7,7 @@ class RequestModel:
         limit = req.args.get("limit")
         order = req.args.get("order")
         match = req.args.get("match")
+        search = req.args.get("search")
 
         if page is not None:
             self.page = int(page)
@@ -21,6 +22,10 @@ class RequestModel:
         else:
             self.order = DEFAULT_ORDER
         if match is not None:
-            self.match = match
+            self.match = DEFAULT_MATCH
         else:
             self.match = DEFAULT_MATCH
+        if search is not None:
+            self.search = str(search)
+        else:
+            self.search = ""

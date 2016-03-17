@@ -51,10 +51,22 @@ class MongoService():
         return res
 
     @classmethod
-    def query(cls, name, limit=DEFAULT_LIMIT, page=DEFAULT_PAGE, match={}, order=DEFAULT_ORDER):
+    def query(cls, name, limit=DEFAULT_LIMIT, page=DEFAULT_PAGE, order=DEFAULT_ORDER):
         try:
             data = []
-            res = cls.db[name].find(match, {"_id": 0}).sort([['_id', order]]).skip((page-1) * limit).limit(limit)
+            res = cls.db[name].find({}, {"_id": 0}).sort([['_id', order]]).skip((page-1) * limit).limit(limit)
+            for r in res:
+                data.append(r)
+            return data
+        except:
+            cls.logger.error(traceback.format_exc())
+            return None
+
+    @classmethod
+    def search(cls, name, search=DEFAULT_SEARCH, limit=DEFAULT_LIMIT, page=DEFAULT_PAGE, order=DEFAULT_ORDER):
+        try:
+            data = []
+            res = cls.db[name].find({"name": {'$regex': '.*' + search + '.*'}}, {"_id": 0}).sort([['_id', order]]).skip((page-1) * limit).limit(limit)
             for r in res:
                 data.append(r)
             return data
@@ -84,6 +96,14 @@ class MongoService():
             cls.insert(table, d)
         cls.logger.info("done")
 
+    # @classmethod
+    # def sad(cls):
+    #     cls.db.foo.drop()
+    #     cls.db.foo.ensureIndex( {txt: "text"} )
+    #     cls.db.foo.insert( {txt: "Robots are superior to humans"} )
+    #     cls.db.foo.insert( {txt: "Humans are weak"} )
+    #     cls.db.foo.insert( {txt: "I, Robot - by Isaac Asimov"} )
+
 def import_data():
     # MongoService.import_from_json(RESOURCE + "/system_stats.json", DB_SYSTEM_STATS)
     MongoService.import_from_json(RESOURCE + "/mock_collections.json", DB_COLLECTIONS)
@@ -95,6 +115,8 @@ def main(logger):
     MongoService.init(logger)
     reset()
     import_data()
+
+
 
 if __name__ == "__main__":
     logger = SimpleLogger.setup(file_path="/preserve/logs/snowflake/mongo_service.log", process_name="DB_INIT")

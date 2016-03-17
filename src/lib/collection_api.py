@@ -15,3 +15,10 @@ def api_get_collections():
     m = MongoService.query(DB_COLLECTIONS, page=req_model.page)
     count = MongoService.count(DB_COLLECTIONS, match={})
     return response_builder.build_data_response(data=m, count=count)
+
+@collection_api.route(ROOT_API + "/search/collections", methods=['GET'])
+def api_search_collections():
+    req_model = RequestModel(request)
+    m = MongoService.search(DB_COLLECTIONS, search=req_model.search, page=req_model.page)
+    count = len(m)
+    return response_builder.build_data_response(data=m, count=count)

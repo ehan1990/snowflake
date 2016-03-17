@@ -31,6 +31,9 @@ app.controller('CollectionController', function($scope, $http, CollectionService
 	}
 
 	$scope.updateSearch = function(searchValue) {
-		console.log(searchValue);
+		CollectionService.updateSearch(searchValue).then(function(response) {
+			$scope.collections = response.data.content;
+			$scope.count = response.data.count;
+		});
 	}
 });
