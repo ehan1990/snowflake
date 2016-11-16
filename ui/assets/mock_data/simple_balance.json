@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Andy",
+        "balance": 17.03
+    },
+    {
+        "name": "Edward",
+        "balance": 0
+    },
+    {
+        "name": "Elaine",
+        "balance": 0
+    },
+    {
+        "name": "Eric",
+        "balance": -0.11
+    },
+    {
+        "name": "Frieda",
+        "balance": -0.37
+    },
+    {
+        "name": "Jason",
+        "balance": 8.89
+    },
+    {
+        "name": "Julie",
+        "balance": 7.53
+    },
+    {
+        "name": "Peter",
+        "balance": 7.86
+    },
+    {
+        "name": "Phil",
+        "balance": 8.89
+    },
+    {
+        "name": "Shawn",
+        "balance": -1.03
+    },
+    {
+        "name": "Sun Yang",
+        "balance": 2.15
+    },
+    {
+        "name": "Wayne",
+        "balance": -7.85
+    }
+]
