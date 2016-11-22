@@ -14,6 +14,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'assets/balance/balance.html'
         })
 
+        .state('faq', {
+            url: '/faq',
+            templateUrl: 'assets/faq/faq.html'
+        })
         
         .state('device-chart', {
             url: '/device/:serial/chart',
