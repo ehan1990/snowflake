@@ -3,44 +3,14 @@ __author__ = 'Edward'
 import jsonpickle
 from flask import Response
 
-def build_raw_response(data=None, status_code=200):
-    if data is None:
-        res = Response(response=None, status=400, mimetype="application/json")
-        return res
-    else:
-        result = jsonpickle.encode(data)
-        res = Response(response=result, status=status_code, mimetype="application/json")
-        return res
 
-def build_data_response(data=None, count=0, status_code=200):
-    if data is None:
-        res = Response(response=None, status=400, mimetype="application/json")
-        return res
-    else:
-        m = {
-            "content": data,
-            "count": count
-        }
-        result = jsonpickle.encode(m)
-        res = Response(response=result, status=status_code, mimetype="application/json")
-        return res
-
-def build_success_response(data=None, msg=None, status_code=200):
-    m = {
-        "msg": msg,
-        "success": True,
-        "data": data
-    }
-    jm = jsonpickle.encode(m)
-    res = Response(response=jm, status=status_code, mimetype="application/json")
+def build_response(data, status_code=200):
+    result = jsonpickle.encode(data)
+    res = Response(response=result, status=status_code, mimetype="application/json")
     return res
 
-def build_error_response(data=None, msg=None, status_code=400):
-    m = {
-        "msg": msg,
-        "success": True,
-        "data": data
-    }
-    jm = jsonpickle.encode(m)
-    res = Response(response=jm, status=status_code, mimetype="application/json")
+
+def send_status_code(status_code=200):
+    res = Response(response={}, status=status_code, mimetype="application/json")
     return res
+

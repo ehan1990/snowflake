@@ -1,0 +1,15 @@
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th ng-repeat="header in table_info.headers" style="text-align: center">{{header}}</th>
+  </tr>
+</thead>
+<tbody>
+  <!-- <div ng-include="'assets/table/tabledata.html'"></div> -->
+  <tr ng-repeat="d in table_data">
+    <td style="text-align: center">{{d.sid}}</td>
+    <td style="text-align: center">{{d.threatNameEng}}</td>
+    <td style="text-align: center"><button ng-click="to_detail(d.serial)" type="button" class="btn btn-success btn-sm">details</button></td>
+  </tr>
+</tbody>                
+</table>
