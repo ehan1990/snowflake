@@ -9,6 +9,8 @@ app.controller('ScheduleController', function($scope, ScheduleService) {
 		});
 	}
 
+	update_page();
+
 	$scope.add_one = function(name) {
 		ScheduleService.add_one(name).then(function(response) {});
 		update_page();
