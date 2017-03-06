@@ -1,6 +1,6 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/balance');
+    $urlRouterProvider.otherwise('/schedule');
 
     $stateProvider
         // HOME STATES AND NESTED VIEWS ========================================

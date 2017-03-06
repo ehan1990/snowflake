@@ -4,12 +4,12 @@ app.controller('ScheduleController', function($scope, ScheduleService) {
 	$scope.table_headers = ["ID", "Name"];
 
 	ScheduleService.get_data().then(function(response) {
-		$scope.schedule = response.data;
+		$scope.schedule = response.data.content;
 	});
 
 	$scope.add_one = function(name) {
 		console.log("adding " + name);
-		ScheduleService.add_one(key).then(function(response) {});
+		ScheduleService.add_one(name).then(function(response) {});
 	}
 
 	$scope.delete_one = function(key) {
