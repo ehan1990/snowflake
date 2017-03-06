@@ -1,17 +1,28 @@
-app.service('ScheduleService', function($http, $stateParams){
+app.service('ScheduleService', function($http){
 
-    this.get_schedule = function() {
+    this.get_data = function() {
         var req = {
             method: 'GET',
-            url: "assets/mock_data/schedule.json"
+            url: constants.ROOT_API + "/demo",
         };
         return $http(req);
     }
 
-    this.get_simple_balance = function() {
+    this.add_one = function(name) {
         var req = {
-            method: 'GET',
-            url: "assets/mock_data/simple_balance.json"
+            method: 'POST',
+            url: constants.ROOT_API + "/demo",
+            data: {
+                "name": name
+            }
+        };
+        return $http(req);
+    }
+
+    this.delete_one = function(key) {
+        var req = {
+            method: 'DELETE',
+            url: constants.ROOT_API + "/demo/" + key
         };
         return $http(req);
     }
